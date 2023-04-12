@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+.slowTransition{
+    transition: all 1s ease; 
+}
+
+.movePointer{
+    cursor: pointer;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #000;
+}
+.container{
+    min-height: 100vh;
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    background: #fff;
+}
+.content__title{
+    margin: 20px 0 20px;
+    padding: 20px 0 40px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 20px solid #000;
+    font-size: 3.5em
+}
+.galleryWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid #000;
+    margin: 20px 0;
+}
+.galleryWrapper:last-child{
+    margin: 20px 0 0;
+}
+.gallery{
+    width: 100%;
+    overflow:hidden;
+    position: relative;
+    margin: 20px 0;
+    padding: 0 110px;
+    padding-bottom: 40px;
+}
+.gallery__title{
+    margin: 10px 0 10px;
+    font-size: 1.5em
+}
+.galleryLineWrapper{
+    overflow:hidden;
+}
+.galleryLine{
+    overflow:hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallerySlide{
+    width: 100%;
+    min-height: 1px;
+    user-select: none;
+    overflow: hidden;
+    pointer-events: none;
+}
+.gallerySlide img{
+    width: 100%;
+}
+.controlsList{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    list-style: none;
+}
+.controlsBox{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    min-width: 200px;
+    margin-left: -100px
+}
+.control{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+    border-radius: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.control:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+.activeControl{
+    background: red;
+    border: 1px solid red;
+    transform: scale(1.2);
+}
+.nextBtn, .prevBtn, .nextBtnModal, .prevBtnModal{
+    cursor: pointer;
+    height: 100%;
+    width: 100px;
+    background: #fff;
+    border: none;
+    position: absolute;
+    z-index: 2;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    user-select: none;
+    transition: all 0.5s ease;
+    box-shadow: 0px 0px 0px 0px #ccc;
+    outline: none;
+}
+
+.nextBtn.pressed, .prevBtn.pressed, .nextBtnModal.pressed, .prevBtnModal.pressed{
+    box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.nextBtn:hover, .prevBtn:hover{
+    color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1); 
+}
+.nextBtn.disabled:hover, .prevBtn.disabled:hover{
+    color: rgba(0, 0, 0, 0.1);
+    background: transparent;
+    box-shadow: none;
+}
+.nextBtnModal.disabled:hover, .prevBtnModal.disabled:hover{
+    color: rgba(255, 255, 255, 0.2);
+    background: transparent;
+    box-shadow: none;
+}
+.nextBtn, .nextBtnModal{
+    top: 0;
+    right: 0
+}
+.prevBtn, .prevBtnModal{
+    top: 0;
+    left: 0
+}
+.nextBtnModal, .prevBtnModal, .prevBtn, .nextBtn{
+    height: 80px;
+    width: 80px;
+    padding: 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin: 0 20px;
+    margin-top: -40px;
+}
+.prevBtn.disabled, .nextBtn.disabled{
+    color: rgba(0, 0, 0, 0.1);
+}
+.nextBtnModal.disabled, .prevBtnModal.disabled{
+    color: rgba(255, 255, 255, 0.2);
+}
+.nextBtnModal, .prevBtnModal, .modalWindowCloseBtn{
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+.nextBtnModal:hover, .prevBtnModal:hover, .modalWindowCloseBtn:hover{
+    color: rgba(255, 255, 255, 0.9);
+}
+.nextBtnModal:hover, .prevBtnModal:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+.modalWindowCloseBtn{
+    font-size: 22px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.5s ease;
+}
+.modalWindow{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 1);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15%
+}
+.fullsizeImgWrapper{
+    width: 100%;
+    
+}
+.fullsizeImg{
+    transition: all 3s ease;
+    width: 100%;
+}
